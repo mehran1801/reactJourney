@@ -40,33 +40,24 @@ const pantryItems = [
 ];
 
 export const SandBox = () => {
-  const [cart, setCart] = useState([]);
-  const selectedBtn = ({target}) => {
-    const val = target.value;
-    setCart(prev => {
-      return[val, ...prev ] ;
-    })
-    
-}
+  const [state, setState] = useState();
   return (
     <div>
-      <h1>SandBox</h1>
+      <h3>SandBox</h3>
       <ul>
-        {cart.map(item => <li key={item}></li>)}
-      </ul>
-      <h2>Produce</h2>
-      {produce.map((item,index) => (
-        <button value={item} onClick={selectedBtn} key={index}>
-          {item}
-        </button>
        
-      ))}
-      ;<h2>Pantry Items</h2>
-      {pantryItems.map((item,index) => (
-        <button value={item} onClick={selectedBtn} key={index}>
+      </ul>
+    {
+      produce.map((item,index) => (
+        <button
+          value={item}
+          key={index}
+          onClick={() =>{}}
+        >
           {item}
         </button>
-      ))}
-    </div>
-  );
+    ))}
+      </div>
+      )
 }
+ 

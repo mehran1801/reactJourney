@@ -11,12 +11,13 @@ export function App() {
   const divStyle = { height: 100, backgroundColor: "lightblue" };
   return (
     <>
-      <div style={(divStyle, { backgroundColor: "#e5eac8" })}>
-        <Counter />
-        <hr></hr>
-      </div>
       <div style={(divStyle, { backgroundColor: "#e5eaf5" })}>
         <SandBox />
+        <hr></hr>
+      </div>
+      
+      <div style={(divStyle, { backgroundColor: "#e5eac8" })}>
+        <GroceryCart />
         <hr></hr>
       </div>
 
