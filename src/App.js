@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Pizza } from "./useState/Pizza";
+import { GroceryCart } from "./useState/GroceryCart";
+import { SandBox } from "./useState/SandBox";
+import { ToggleWord } from "./useState/ToggleWord";
+import { Login } from "./useState/Login";
+import { EditProfile } from "./useState/EditProfile";
+import { Counter } from "./useState/Counter";
 
-function App() {
+export function App() {
+  const divStyle = { height: 100, backgroundColor: "lightblue" };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={(divStyle, { backgroundColor: "#e5eac8" })}>
+        <Counter />
+        <hr></hr>
+      </div>
+      <div style={(divStyle, { backgroundColor: "#e5eaf5" })}>
+        <SandBox />
+        <hr></hr>
+      </div>
+
+      {/* <div style={(divStyle, { backgroundColor: "#e5acd9" })}>
+        <Login />
+        <hr></hr>
+      </div>
+      <div style={(divStyle, { backgroundColor: "khaki" })}>
+        <GroceryCart />
+        <hr></hr>
+      </div>
+      
+      <div style={divStyle}>
+        <hr></hr>
+      </div>
+      <div style={divStyle}>
+        <Pizza />
+        <hr></hr>
+      </div>
+      <div style={(divStyle, { backgroundColor: "cyan" })}>
+        <ToggleWord />
+        <hr></hr>
+      </div> */}
+    </>
   );
 }
-
-export default App;
