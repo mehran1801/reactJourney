@@ -34,43 +34,49 @@ import React, { useState } from "react";
 
 
 export function Counter() {
-    const [counter, setCounter] = useState(0);
-    const [questionIndex, setQuestionIndex] = useState(0);
-    const incrementCounter = () => {
-        return setCounter(prev => prev+1)
-    }
-    // Go Back
-    const goBack = () => { setQuestionIndex(prev => prev - 1) }
-    // Go Forward
-    const goForward = () => { setQuestionIndex(prev => prev + 1) }
-    // Determine first Question
-    const onFirstQuestion = questionIndex === 0;
-    const onLastQuestion = questionIndex === questions.length - 1;
+  const [counter, setCounter] = useState(0);
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const incrementCounter = () => {
+    return setCounter((prev) => prev + 1);
+  };
+  // Go Back
+  const goBack = () => {
+    setQuestionIndex((prev) => prev - 1);
+  };
+  // Go Forward
+  const goForward = () => {
+    setQuestionIndex((prev) => prev + 1);
+  };
+  // Determine first Question
+  const onFirstQuestion = questionIndex === 0;
+  const onLastQuestion = questionIndex === questions.length - 1;
+  // console.log("first " + onFirstQuestion);
+  // console.log("last " + onLastQuestion);
 
-    return (
-      <div>
-        <p>You have clicked that button {counter} times</p>
-        <button onClick={incrementCounter}>Click Here</button>
-        <hr
-          style={{ height: "5px", border: "none", backgroundColor: "black" }}
-        ></hr>
-        {/* QuizNavbar */}
-        <p>Question # {questionIndex + 1}</p>
-        <button
-          onClick={goBack}
-          disabled={onFirstQuestion}
-          style={{ padding: "10px", margin: "3px" }}
-        >
-          Go Back
-        </button>
-        <button
-          onClick={goForward}
-          disabled={onLastQuestion}
-          style={{ padding: "10px", margin: "3px" }}
-        >
-          Next
-        </button>
-      </div>
-    );
+  return (
+    <div>
+      <p>You have clicked that button {counter} times</p>
+      <button onClick={incrementCounter}>Click Here</button>
+      <hr
+        style={{ height: "5px", border: "none", backgroundColor: "black" }}
+      ></hr>
+      {/* QuizNavbar */}
+      <p>Question # {questionIndex + 1}</p>
+      <button
+        onClick={goBack}
+        disabled={onFirstQuestion}
+        style={{ padding: "10px", margin: "3px" }}
+      >
+        Go Back
+      </button>
+      <button
+        onClick={goForward}
+        disabled={onLastQuestion}
+        style={{ padding: "10px", margin: "3px" }}
+      >
+        Next
+      </button>
+    </div>
+  );
 }
 

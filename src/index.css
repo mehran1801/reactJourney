@@ -1,13 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: antiquewhite;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input{
+  border:2px solid #000;
+  margin-bottom: 2%;
+
+}
+lable{
+  margin: 50px;
+}
+button{
+  padding:5px;
+  border:3px solid #666;
+  color:#000;
+  text-decoration: none;
+  margin:5px;
+  background-color: white;
+}
+
+div {
+  /* padding: 20px 0 0; */
+  /* height: 100%; */
+  
+}
+
+
+/* input[type=text] {
+  padding: 0;
+  height: 30px;
+  position: relative;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, .15);
+  background-color: white;
+  font-size: 16px;
+}
+
+.advancedSearchTextbox {
+  width: 526px;
+  margin-right: -4px;
+} */
+
+li{
+  font-size: 12px;
+}
+
+p{
+  font-size: 13px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  text-decoration: underline;
+
 }

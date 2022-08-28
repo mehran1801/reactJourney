@@ -6,6 +6,9 @@ import { ToggleWord } from "./useState/ToggleWord";
 import { Login } from "./useState/Login";
 import { EditProfile } from "./useState/EditProfile";
 import { Counter } from "./useState/Counter";
+import { ColorPicker } from "./useState/ColorPicker";
+import { EmailTextInput } from "./useState/EmailTextInput";
+
 
 export function App() {
   const divStyle = { height: 100, backgroundColor: "lightblue" };
@@ -15,9 +18,9 @@ export function App() {
         <SandBox />
         <hr></hr>
       </div>
-      
+
       <div style={(divStyle, { backgroundColor: "#e5eac8" })}>
-        <GroceryCart />
+        <Counter />
         <hr></hr>
       </div>
 
