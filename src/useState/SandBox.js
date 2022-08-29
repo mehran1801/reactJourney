@@ -84,40 +84,38 @@ const questions = [
   },
 ];
 export const SandBox = () => {
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const goForward = () => {
-    setQuestionIndex((prev) => prev + 1);
-  };
-  const goBack = () => {
-    setQuestionIndex((prev) => prev - 1);
-  };
-  const onFirstQuestion = questionIndex === 0;
- 
-  // {
-  //   console.log("first " + firstQuestion);
-  // }
-  
-  const onLastQuestion = questionIndex === questions.length - 1;
-  // {console.log('length is '+questions.length)}
-  // { console.log('last' + lastQuestion) }
-  return (
+  const [cart, setCart] = useState([]);
+  const addItem = (item) => {
+    setCart((prev) => {
+      return [item, ...prev];
+    })
+  }
 
+  const removeItem = (targetIndex) => {
+    setCart((prev) => {
+      return prev.filter((item, index) => {
+        return index !==targetIndex;
+    })})
+  }
+  
+  return (
+  
     <div>
-      <p>Question # { questionIndex+1}</p>
-      <button
-        onClick={goBack}
-        disabled={onFirstQuestion}
-      >
-Back
-      </button>
-      <button
-        onClick={goForward}
-        disabled={onLastQuestion}
-        
-      >
-Next
-      </button>
+
+      <ul>
+        {cart.map((item, index) => {
+          return <li
+            key={index}
+            onClick={()=>{removeItem(index)}}
+          >{item}</li>
+        })}
+      </ul>
+      <h2>Produce</h2>
+
     </div>
   )
+}
+function itemList({ items, onItemClick }) {
+  
 }
  

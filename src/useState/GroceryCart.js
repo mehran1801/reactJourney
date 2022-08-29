@@ -75,7 +75,9 @@ export function GroceryCart() {
       <h1>Grocery Cart</h1>
       <ul style={{ backgroundColor: "#edf6f9" }}>
         {cart.map((item, index) => (
-          <li onClick={() => removeItem(index)} key={index}>
+          <li
+            onClick={() => removeItem(index)}
+            key={index}>
             {item}
           </li>
         ))}

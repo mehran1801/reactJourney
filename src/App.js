@@ -20,7 +20,7 @@ export function App() {
       </div>
 
       <div style={(divStyle, { backgroundColor: "#e5eac8" })}>
-        <Counter />
+        <GroceryCart />
         <hr></hr>
       </div>
 
