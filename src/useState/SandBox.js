@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+const options = ["Bell Pepper", "Sausage", "Pepperoni", "Pineapple"];
 
 const produce = [
   "Carrots",
@@ -83,39 +84,79 @@ const questions = [
     answer: "A clock",
   },
 ];
+
+
+
 export const SandBox = () => {
-  const [cart, setCart] = useState([]);
-  const addItem = (item) => {
-    setCart((prev) => {
-      return [item, ...prev];
-    })
+  const [newTask, setNewTask] = useState({});
+  const [allTasks, setAllTasks] = useState([]);
+
+  const handleChange = ({target}) => {
+      const { name, value } = target;
+    
+    setNewTask((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
   }
 
-  const removeItem = (targetIndex) => {
-    setCart((prev) => {
-      return prev.filter((item, index) => {
-        return index !==targetIndex;
-    })})
-  }
-  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!newTask.title) return;
+    setAllTasks((prev) => [newTask, ...prev]);
+    setNewTask({});
+
+  };
+
+
+  const handleDelete = (taskId => {
+    return setAllTasks(prev => prev.filter((task) => task.id !== taskId));
+  })
+
   return (
-  
-    <div>
+    <>
+      <form onSubmit={handleSubmit}>
+        <h6>SandBox</h6>
+        <input
+          name="title"
+          value={newTask.title || ""}
+          placeholder="New Task"
+          onChange={handleChange}
+        />
+        {!newTask.title ? null : (
+          <>
+            <textarea
+              name="description"
+              placeholder="details"
+              value={newTask.description || ""}
+              onChange={handleChange}
+            />
+            <button type="submit">Add Task</button>
+          </>
+        )}
+      </form>
 
       <ul>
-        {cart.map((item, index) => {
-          return <li
-            key={index}
-            onClick={()=>{removeItem(index)}}
-          >{item}</li>
-        })}
+        {allTasks.map(({ title, description, id }) => (
+          <li
+            key={id}
+            onClick={handleDelete}
+          
+          >
+            <div>
+              <h4>{title}</h4>
+              {/* <p>{description}</p> */}
+            </div>
+          </li>
+        ))}
+     
       </ul>
-      <h2>Produce</h2>
 
-    </div>
-  )
-}
-function itemList({ items, onItemClick }) {
-  
+      {/* {console.log(allTasks)} */}
+    </>
+  );
+
 }
  

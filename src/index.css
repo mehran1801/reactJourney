@@ -3,6 +3,8 @@
 @tailwind utilities;
 body {
   background-color: antiquewhite;
+  margin:10px;
+  padding:10px;
 }
 
 input{
@@ -27,8 +29,21 @@ div {
   /* height: 100%; */
   
 }
-
-
+.red{
+  color:red;
+}
+.green{
+  color:green;
+}
+.orange{
+  color:orange;
+}
+.skyblue{
+  color:lightskyblue;
+}
+.aquamarine{
+  color:aquamarine
+}
 /* input[type=text] {
   padding: 0;
   height: 30px;
@@ -48,13 +63,111 @@ div {
 
 li{
   font-size: 12px;
+  margin:10px;
+  color:blue;
 }
 
 p{
   font-size: 13px;
+  max-width: 700px;
+  margin:10px;
 }
 
 h1,h2,h3,h4,h5,h6{
-  text-decoration: underline;
+  text-decoration: none;
 
 }
+.strike {
+   text-decoration: line-through;
+   color:#000;
+}
+
+/* Codecademy styles */
+/* 
+html, body {
+	height: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+* {
+	font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+#app {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	padding: 8px;
+}
+
+h1 {
+  margin: 8px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+input,
+textarea {
+  padding: 5px;
+}
+
+form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  background-color: Cornsilk;
+  border: 1px solid BurlyWood;
+  border-radius: 5px 2px;
+  margin: 8px 0;
+}
+
+li div {
+  position: relative;
+}
+
+li div button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: 0;
+  padding: 10px;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+li div button:hover,
+li div button:focus {
+  box-shadow: 0 0 1px black;
+}
+
+li h2 {
+  background-color: NavajoWhite;
+  margin: 0;
+  padding: 4px;
+}
+
+li p {
+  margin: 8px;
+} */

@@ -8,27 +8,34 @@ import { EditProfile } from "./useState/EditProfile";
 import { Counter } from "./useState/Counter";
 import { ColorPicker } from "./useState/ColorPicker";
 import { EmailTextInput } from "./useState/EmailTextInput";
+import { TodoList1 } from "./useState/TodoList1";
+import { TodoList } from "./useState/TodoList";
+import {Props, PropsExample} from "./props/PropsExample"
 
 
 export function App() {
-  const divStyle = { height: 100, backgroundColor: "lightblue" };
+
+  const divStyle = { backgroundColor: "lightblue"  };
   return (
     <>
       <div style={(divStyle, { backgroundColor: "#e5eaf5" })}>
+        <TodoList1 />
+        <hr></hr>
+      </div>
+
+      {/* {<div style={(divStyle, { backgroundColor: "#e5acd9" })}>
         <SandBox />
         <hr></hr>
       </div>
+      } */}
 
-      <div style={(divStyle, { backgroundColor: "#e5eac8" })}>
-        <GroceryCart />
-        <hr></hr>
-      </div>
 
-      {/* <div style={(divStyle, { backgroundColor: "#e5acd9" })}>
-        <Login />
+      {/* <div style={(divStyle, { backgroundColor: "#e5eac8" })}>
+        <PropsExample name="iPhone" color="gold" price={2000} />
         <hr></hr>
-      </div>
-      <div style={(divStyle, { backgroundColor: "khaki" })}>
+      </div> */}
+
+      {/* <div style={(divStyle, { backgroundColor: "khaki" })}>
         <GroceryCart />
         <hr></hr>
       </div>
@@ -43,7 +50,7 @@ export function App() {
       <div style={(divStyle, { backgroundColor: "cyan" })}>
         <ToggleWord />
         <hr></hr>
-      </div> */}
+      </div>  */}
     </>
   );
 }
