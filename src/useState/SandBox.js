@@ -88,75 +88,22 @@ const questions = [
 
 
 export const SandBox = () => {
-  const [newTask, setNewTask] = useState({});
-  const [allTasks, setAllTasks] = useState([]);
-
-  const handleChange = ({target}) => {
-      const { name, value } = target;
-    
-    setNewTask((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
+  const [count, setCount] = useState("");
+  const handleClick = ({ target }) => {
+    const updatedValue = target.value;
+    setCount(updatedValue)
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!newTask.title) return;
-    setAllTasks((prev) => [newTask, ...prev]);
-    setNewTask({});
-
-  };
-
-
-  const handleDelete = (taskId => {
-    return setAllTasks(prev => prev.filter((task) => task.id !== taskId));
+  const handleSubmit = ( e => {
+  e.preventDefault();
+   alert(JSON.stringify(count))
   })
-
+  
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <h6>SandBox</h6>
-        <input
-          name="title"
-          value={newTask.title || ""}
-          placeholder="New Task"
-          onChange={handleChange}
-        />
-        {!newTask.title ? null : (
-          <>
-            <textarea
-              name="description"
-              placeholder="details"
-              value={newTask.description || ""}
-              onChange={handleChange}
-            />
-            <button type="submit">Add Task</button>
-          </>
-        )}
-      </form>
-
-      <ul>
-        {allTasks.map(({ title, description, id }) => (
-          <li
-            key={id}
-            onClick={handleDelete}
-          
-          >
-            <div>
-              <h4>{title}</h4>
-              {/* <p>{description}</p> */}
-            </div>
-          </li>
-        ))}
-     
-      </ul>
-
-      {/* {console.log(allTasks)} */}
-    </>
+    <form onSubmit={handleSubmit}>
+      <label for="email-input">Email</label>
+      <input id="email-input" value={count} onChange={handleClick} />
+    </form>
   );
-
-}
- 
+  
+  }

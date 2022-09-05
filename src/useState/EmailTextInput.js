@@ -23,8 +23,28 @@ export function EmailTextInput() {
       }
       // just ignore the event, when new value is invalid
     })
+  
+  // onSubmit
+   const handleSubmit = (e) => {
+     e.preventDefault();
+     alert(JSON.stringify(email)); // change email to phone when testing phone
+   };
     return (
-      <div>
+      <form onSubmit={handleSubmit}>
+        <h4>
+          Lets see how to manage the changing value of a string as a user types
+          into a text input field, Just have a look at the code.
+        </h4>
+
+        <h5 style={{ color: "red", fontFamily: "Courier New" }}>
+          In Email: initially you have to set empty value and as user types you
+          have to set updatedPhoneValue to state.{" "}
+        </h5>
+        <h5 style={{ color: "red", fontFamily: "Courier New" }}>
+          In Phone: initially you have to set empty value and as user types you
+          have to set updatedEmailValue to state.but it has to go through a
+          criteria.{" "}
+        </h5>
         <label for="email-input">Email:</label>
         <input
           type="text"
@@ -42,10 +62,7 @@ export function EmailTextInput() {
               onChange={handleChange2}
             />
           </div>
-          <h5>
-            Lets see how to manage the changing value of a string as a user
-            types into a text input field:
-          </h5>
+
           <ul>
             <li>
               The local variable named email is assigned the current state value
@@ -68,6 +85,6 @@ export function EmailTextInput() {
             </li>
           </ul>
         </div>
-      </div>
+      </form>
     );
 }

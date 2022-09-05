@@ -14,7 +14,8 @@ const colors = [
 
 export function ColorPicker() {
     const [color, setColor] = useState("white");
-    const [isLoading, setIsLoading] = useState();
+  const [isLoading, setIsLoading] = useState();
+  // It is called Styled object variable
     const divStyle = {backgroundColor: color, padding:"10px"}
     return (
       <div style={divStyle}>
@@ -87,6 +88,7 @@ export function ColorPicker() {
           <h6>Instructions:</h6>
           <ul className="list-disc">
             <li>Using Style object Variable</li>
+            <li>dont put curly braces when using state variable e.g color , gives no result</li>
             <li>Using Ternary Operator</li>
             <li>
               More on{" "}

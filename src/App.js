@@ -1,4 +1,5 @@
 import React from "react";
+import {Props, PropsExample} from "./props/PropsExample"
 import { Pizza } from "./useState/Pizza";
 import { GroceryCart } from "./useState/GroceryCart";
 import { SandBox } from "./useState/SandBox";
@@ -9,8 +10,10 @@ import { Counter } from "./useState/Counter";
 import { ColorPicker } from "./useState/ColorPicker";
 import { EmailTextInput } from "./useState/EmailTextInput";
 import { TodoList1 } from "./useState/TodoList1";
+import { PageTitle } from "./useEffect/PageTitle";
 import { TodoList } from "./useState/TodoList";
-import {Props, PropsExample} from "./props/PropsExample"
+import { Counter2 } from "./useEffect/Counter";
+import { Timer } from "./useEffect/Timer";
 
 
 export function App() {
@@ -18,16 +21,18 @@ export function App() {
   const divStyle = { backgroundColor: "lightblue"  };
   return (
     <>
-      <div style={(divStyle, { backgroundColor: "#e5eaf5" })}>
-        <TodoList1 />
-        <hr></hr>
-      </div>
-
-      {/* {<div style={(divStyle, { backgroundColor: "#e5acd9" })}>
+      {<div
+        // style={(divStyle, { backgroundColor: "#e5acd9" })}
+      >
         <SandBox />
         <hr></hr>
       </div>
-      } */}
+      }
+      <div style={(divStyle, { backgroundColor: "#e5eaf5" })}>
+        <EmailTextInput />
+        <hr></hr>
+      </div>
+
 
 
       {/* <div style={(divStyle, { backgroundColor: "#e5eac8" })}>

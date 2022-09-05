@@ -25,7 +25,7 @@ export function TodoList1() {
                     className={item.complete ? "strike" : ""
                     
                     }
-                onClick={}
+               
                 >{item.task}</li>
                
             ))}
