@@ -29,7 +29,7 @@ export function App() {
       </div>
       }
       <div style={(divStyle, { backgroundColor: "#e5eaf5" })}>
-        <EmailTextInput />
+        <GroceryCart />
         <hr></hr>
       </div>
 

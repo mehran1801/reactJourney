@@ -1,3 +1,4 @@
+import { click } from "@testing-library/user-event/dist/click";
 import React, { useState } from "react";
 
 const options = ["Bell Pepper", "Sausage", "Pepperoni", "Pineapple"];
@@ -88,22 +89,44 @@ const questions = [
 
 
 export const SandBox = () => {
-  const [count, setCount] = useState("");
-  const handleClick = ({ target }) => {
-    const updatedValue = target.value;
-    setCount(updatedValue)
+  const [state, setState] = useState([]);
+  const handleClick = ({target}) => {
+    const clicked = target.value;
+    setState(prev => {
+      return [...prev, clicked]
+    })
   }
-
-  const handleSubmit = ( e => {
-  e.preventDefault();
-   alert(JSON.stringify(count))
+  const handleDelete = ((targetInd) => {
+    return setState((prev) => {
+      return prev.filter((item, indx) => {
+       
+          return indx !== targetInd;
+        
+    })
   })
-  
+})
   return (
-    <form onSubmit={handleSubmit}>
-      <label for="email-input">Email</label>
-      <input id="email-input" value={count} onChange={handleClick} />
-    </form>
-  );
+    <div>
+      <h3>Grocery Cart</h3>
+      <ul>
+        {state.map((item,i) => (
+          <li
+            key={i}
+            value={item}
+            onClick={()=>{handleDelete(i)}}
+          >{item}</li>
+        ))}
+      </ul>
+      {produce.map((item,i) => (
+        <button
+          value={item}
+          key={i}
+          onClick={handleClick}
+        >
+          {item}
+        </button>
+      ))}
+    </div>
+  )
   
   }
