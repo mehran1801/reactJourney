@@ -1,4 +1,4 @@
-import { click } from "@testing-library/user-event/dist/click";
+
 import React, { useState } from "react";
 
 const options = ["Bell Pepper", "Sausage", "Pepperoni", "Pineapple"];
@@ -87,46 +87,46 @@ const questions = [
 ];
 
 
+     
+// const text= `Focused, hard work is the real key
+//         to success. Keep your eyes on the goal, 
+//         and just keep taking the next step 
+//         towards completing it.`
+// const maxLength = 15;
 
-export const SandBox = () => {
+export function Sandbox() {
   const [state, setState] = useState([]);
-  const handleClick = ({target}) => {
-    const clicked = target.value;
+  const [state2, setState2] = useState('');
+  const addItem = ({target}) => {
+    const capturedVal = target.value;
+    // setState2(capturedVal)
     setState(prev => {
-      return [...prev, clicked]
+      return [capturedVal, ...prev]
     })
   }
-  const handleDelete = ((targetInd) => {
-    return setState((prev) => {
-      return prev.filter((item, indx) => {
-       
-          return indx !== targetInd;
-        
-    })
-  })
-})
+
+  // const handleSubmit = e=> {
+  //   e.preventDefault();
+
+  // }
+
   return (
     <div>
-      <h3>Grocery Cart</h3>
+      <form
+        // onSubmit={handleSubmit}
+      >
+        <input onChange={addItem} value={state2} />
+      </form>
       <ul>
-        {state.map((item,i) => (
+        {state.map(item => (
           <li
-            key={i}
-            value={item}
-            onClick={()=>{handleDelete(i)}}
+          key={item}
           >{item}</li>
         ))}
       </ul>
-      {produce.map((item,i) => (
-        <button
-          value={item}
-          key={i}
-          onClick={handleClick}
-        >
-          {item}
-        </button>
-      ))}
     </div>
-  )
+  );
   
   }
+
+

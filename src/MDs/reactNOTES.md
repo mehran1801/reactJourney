@@ -1,3 +1,6 @@
+# Extras
+- Sometimes the inline functions look messy and I’ll pull them out, and sometimes they’re succinct and I leave them inline.
+
 # ColorPicker:
 how to find clickedButton? 
     give button "value" attribute and access through target object. e.target.value.
@@ -14,7 +17,7 @@ how to find clickedButton?
 
 - I used prev and set its value inside setState, it worked instead of setting it directly like this setState("not loading..")
 
-# Counter
+# Counter (a.k.a Steps Tracker)
 - I didn't give initial state value like 0, and got NaN. which makes sense as you cannot add +1 to undefined.
 
 - Often, the next value of our state is calculated using the current state. In this case, it is best practice to update state with a callback function. If we do not, we risk capturing outdated, or “stale”, state values. 
@@ -46,9 +49,48 @@ What is moving part that you will setState? ** If you look carefully it is index
 - if it is included then remove / filter it
 - if it is *NOT* included, then add it. 
 
+# ListOfThings
+
+
+
 # GroceryCart 
 - must capture index in event listener.
+- use arrow function 
 - only then you can use filter array based on that index as there are multiple items.
+
+# LessText
+
+- str.substring(from, to) --> to and from means index number
+
+- str.substr(from, length) --> it takes length not index
+
+- The trim() method removes whitespace from both ends of a string and returns a new string, without modifying the original string. Whitespace in this context is all the whitespace characters (space, tab, no-break space, etc.)
+
+- My white paper logic (best way to understand)
+
+** If the length of the "Text" is equal to or less <= than 
+the length provided (maxLength), then render the text.
+
+If let's say length of the text is 'more' than maxLength then 'Render the text but not more than maxLength' AND I will link it with my initial state and that has to be 'true'. If 'false' then render the whole 'text'.
+
+At this stage text is displayed on the screen of user's choice of length. and our initial state is true (by default).
+
+Now we want to display one of two buttons either 
+'Read More' or 
+'Read Less'
+
+we have already established that if state would be false, whole text will be displayed , otherwise text of user's choice will be displayed.
+
+
+Once that’s done, the “read more” / “read less” buttons just need to call setState when they’re clicked.
+
+
+
+
+
+
+
+
 
 
 
