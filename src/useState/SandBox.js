@@ -95,38 +95,43 @@ const questions = [
 // const maxLength = 15;
 
 export function Sandbox() {
-  const [state, setState] = useState([]);
-  const [state2, setState2] = useState('');
-  const addItem = ({target}) => {
-    const capturedVal = target.value;
-    // setState2(capturedVal)
-    setState(prev => {
-      return [capturedVal, ...prev]
-    })
-  }
+  const [form, setState] = useState({
+    username: "",
+    password: "",
+  });
 
-  // const handleSubmit = e=> {
-  //   e.preventDefault();
+  const printValues = (e) => {
+    e.preventDefault();
+    console.log(form.username, form.password);
+  };
 
-  // }
+  const updateField = (e) => {
+    setState({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
-    <div>
-      <form
-        // onSubmit={handleSubmit}
-      >
-        <input onChange={addItem} value={state2} />
-      </form>
-      <ul>
-        {state.map(item => (
-          <li
-          key={item}
-          >{item}</li>
-        ))}
-      </ul>
-    </div>
+    <form>
+      <label>
+        Username:
+        <input value={form.username} name="username" onChange={updateField} />
+      </label>
+      <br />
+      <label>
+        Password:
+        <input
+          value={form.password}
+          name="password"
+          type="password"
+          onChange={updateField}
+        />
+      </label>
+      <br />
+      <button onSubmit={printValues}>Submit</button>
+    </form>
   );
-  
   }
 
 

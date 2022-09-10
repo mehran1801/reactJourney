@@ -41,6 +41,31 @@ What is moving part that you will setState? ** If you look carefully it is index
 
 - I have added onSubmit to form to see the updated value. something wrong in code ..fix it and see output.
 
+# LoginForm
+
+If you want to store multiple values in a function component, you’ve got a couple options:
+
+    - call useState more than once
+    - shove everything into an object
+
+There’s nothing wrong with calling useState multiple times, and in most cases, that’s how I store multiple values. Once you get over 4 or 5 useState calls it gets a bit unwieldy, but if you’re fine with it, React is too
+
+- Try to do calling useState a couple of times.
+- Also try storing multiple values in useState and to do that you have to put them into a single object.
+
+- To store multiple values in useState, you have to put them into a single object, and be careful about how you update the state. 
+
+- not working as expected, needs to debugg
+
+# Login (Codecademy)
+
+Did you notice the square brackets around the name [name]:value ? 
+
+This Computed Property Name allows us to use the string value stored by the name variable as a property key! 
+
+to set empty values in inputs you can use your initial object.firstName || '' AND object.password || '' as it will be undefined initially. alternatively you can set these values '' (empty) in object.
+
+- when storing values in object, name prop to inputs is very important, the setState function can use it to update the appropriate state. This way you can avoid having to write a handler function for each field.
 
 # Pizza (toggle Add/Remove)
 
@@ -51,6 +76,9 @@ What is moving part that you will setState? ** If you look carefully it is index
 
 # ListOfThings
 
+- What we want to be able to do is after writing text in input , pressing "Enter" should add this text to list. 
+
+- make two states, one for dynamic array and other for value.
 
 
 # GroceryCart 
@@ -93,5 +121,3 @@ Once that’s done, the “read more” / “read less” buttons just need to c
 
 
 
-
-https://daveceddia.com/usestate-hook-examples/ (examples)
