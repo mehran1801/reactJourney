@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import './index.css'
+import './my-sass.scss'
 import {Props, PropsExample} from "./props/PropsExample"
 import { Pizza } from "./useState/Pizza";
 import { GroceryCart } from "./useState/GroceryCart";
@@ -11,9 +13,11 @@ import { EditProfile } from "./useState/EditProfile";
 import { Counter } from "./useState/Counter";
 import { ColorPicker } from "./useState/ColorPicker";
 import { EmailTextInput } from "./useState/EmailTextInput";
-import { TodoList1 } from "./useState/TodoList1";
 import { LessText } from "./useState/LessText";
 import { ListOfThings } from "./useState/ListOfThings";
+import { TodoList2 } from "./useState/TodoList2";
+import { TodoList1 } from "./useState/TodoList1";
+import { TodoList_MyVersion } from "./useState/TodoList_MyVersion";
 
 
 // USE EFFECT
@@ -23,6 +27,27 @@ import { Counter2 } from "./useEffect/Counter";
 import { Timer } from "./useEffect/Timer";
 
 // styled component , use these instead of divs.
+
+export function App() {
+
+  const divStyle = { backgroundColor: "lightblue" };
+  
+
+  return (
+    // <StyledContainer>
+    <div>
+      
+        {/* <Sandbox />
+        <TodoList_MyVersion /> */}
+      <TodoList2 className="todoList2" />
+      
+      </div>
+    
+  );
+}
+
+
+
 
 const StyledContainer = styled.div`
   margin: 20% auto;
@@ -57,24 +82,3 @@ const StyledForm = styled.form`
   }
 `;
 
-export function App() {
-
-  const divStyle = { backgroundColor: "lightblue" };
-  
-
-  return (
-    <StyledContainer>
-     
-      {/* <StyledForm> */}
-        <LoginForm />
-        {/* text=
-        {`Focused, hard work is the real key
-        to success. Keep your eyes on the goal, 
-        and just keep taking the next step 
-        towards completing it.`}{" "}
-        maxLength={30} */}
-         {/* <hr></hr> */}
-      {/* </StyledForm> */}
-     </StyledContainer>
-  );
-}

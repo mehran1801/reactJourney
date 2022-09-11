@@ -58,7 +58,7 @@ export function LoginForm() {
       [target.name]: target.value
       
     })
-    form[target.name] = "";
+    // form[target.name] = "";
    
   }
 

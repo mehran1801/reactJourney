@@ -38,6 +38,7 @@ function TasksList({ allTasks, handleDelete }) {
           <li key={id}>
             <div>
               <h2>{title}</h2>
+              
             </div>
           </li>
         ))}
@@ -50,13 +51,15 @@ function TasksList({ allTasks, handleDelete }) {
 
 
 export const TodoList = () => {
-    const [newTask, setNewTask] = useState({});
+  const [newTask, setNewTask] = useState({});
+  
     const handleChange = ({ target }) => {
       const { name, value } = target;
       setNewTask((prev) => ({ ...prev, id: Date.now(), [name]: value }));
     };
 
-    const [allTasks, setAllTasks] = useState([]);
+  const [allTasks, setAllTasks] = useState([]);
+  
     const handleSubmit = (event) => {
       event.preventDefault();
 

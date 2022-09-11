@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-export const SandBox = () => {
+export const TodoList_MyVersion = () => {
   const [newTask, setNewTask] = useState({});
   const [allTasks, setAllTasks] = useState([]);
 
@@ -29,7 +29,7 @@ export const SandBox = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h6>SandBox</h6>
+        <h6>My Version</h6>
         <input
           name="title"
           value={newTask.title || ""}
@@ -54,13 +54,10 @@ export const SandBox = () => {
           <li key={id} onClick={handleDelete}>
             <div>
               <h4>{title}</h4>
-              {/* <p>{description}</p> */}
             </div>
           </li>
         ))}
       </ul>
-
-      {/* {console.log(allTasks)} */}
     </>
   );
 };

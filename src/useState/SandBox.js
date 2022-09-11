@@ -1,6 +1,12 @@
 
 import React, { useState } from "react";
 
+const text= `Focused, hard work is the real key
+        to success. Keep your eyes on the goal, 
+        and just keep taking the next step 
+        towards completing it.`
+const maxLength = 15;
+
 const options = ["Bell Pepper", "Sausage", "Pepperoni", "Pineapple"];
 
 const produce = [
@@ -87,51 +93,70 @@ const questions = [
 ];
 
 
-     
-// const text= `Focused, hard work is the real key
-//         to success. Keep your eyes on the goal, 
-//         and just keep taking the next step 
-//         towards completing it.`
-// const maxLength = 15;
+function NewTask({ newTask, handleChange, handleSubmit }) {
+  return (
+    <form onSubmit={handleSubmit}>
+      <input 
+        type="text"
+        name="title"
+        placeholder="New Task"
+        value={newTask.title || ""}
+        onChange = {handleChange}
+      />
+      {!newTask.title ? null : (
+        <>
+          <textarea 
+            name="description"
+            placeholder="Details"
+            value={newTask.description || ""}
+            onChange={handleChange}
+          />
+          <button type="submit">Add Task</button>
+        </>
+        )}
+    </form>
+  )
+}
+
+function TasksList({ allTasks, handleDelete }) {
+  return (
+    <ul>
+      {allTasks.map()}
+    </ul>
+  )
+}
 
 export function Sandbox() {
-  const [form, setState] = useState({
-    username: "",
-    password: "",
-  });
 
-  const printValues = (e) => {
-    e.preventDefault();
-    console.log(form.username, form.password);
-  };
+  const [newTask, setNewTask] = useState({});
+  const [allTasks, setAllTasks] = useState([]);
+  
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setNewTask((prev) => ({...prev, id:Date.now(), [name]:value}))
+  }
 
-  const updateField = (e) => {
-    setState({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!newTask.title) return;
+    setAllTasks((prev) => ([newTask, ...prev]))
+      setNewTask({});
+    
+  }
+
 
   return (
-    <form>
-      <label>
-        Username:
-        <input value={form.username} name="username" onChange={updateField} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input
-          value={form.password}
-          name="password"
-          type="password"
-          onChange={updateField}
-        />
-      </label>
-      <br />
-      <button onSubmit={printValues}>Submit</button>
-    </form>
-  );
+    <main>
+      <h1>My Tasks</h1>
+      {/* New Task */}
+      <NewTask 
+        newTask={newTask}
+        handleChange={handleChange}
+        handleSubmit = {handleSubmit}
+      />
+    </main>
+  );    
+
   }
 
 
