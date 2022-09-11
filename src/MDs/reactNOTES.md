@@ -78,7 +78,9 @@ to set empty values in inputs you can use your initial object.firstName || '' AN
 
 - What we want to be able to do is after writing text in input , pressing "Enter" should add this text to list. 
 
-- make two states, one for dynamic array and other for value.
+- make two states, one for dynamic array and other for value, so you can reset it back to empty. 
+
+- 
 
 
 # GroceryCart 

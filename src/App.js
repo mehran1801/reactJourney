@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import './index.css'
-import './my-sass.scss'
+import './index.scss'
+// import './my-sass.scss';
 import {Props, PropsExample} from "./props/PropsExample"
 import { Pizza } from "./useState/Pizza";
 import { GroceryCart } from "./useState/GroceryCart";
@@ -36,13 +36,12 @@ export function App() {
   return (
     // <StyledContainer>
     <div>
-      
-        {/* <Sandbox />
+      {/* <Sandbox />
         <TodoList_MyVersion /> */}
-      <TodoList2 className="todoList2" />
-      
-      </div>
+      <Sandbox />
+      <TodoList2 />
     
+    </div>
   );
 }
 

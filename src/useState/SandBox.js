@@ -93,69 +93,37 @@ const questions = [
 ];
 
 
-function NewTask({ newTask, handleChange, handleSubmit }) {
-  return (
-    <form onSubmit={handleSubmit}>
-      <input 
-        type="text"
-        name="title"
-        placeholder="New Task"
-        value={newTask.title || ""}
-        onChange = {handleChange}
-      />
-      {!newTask.title ? null : (
-        <>
-          <textarea 
-            name="description"
-            placeholder="Details"
-            value={newTask.description || ""}
-            onChange={handleChange}
-          />
-          <button type="submit">Add Task</button>
-        </>
-        )}
-    </form>
-  )
-}
 
-function TasksList({ allTasks, handleDelete }) {
-  return (
-    <ul>
-      {allTasks.map()}
-    </ul>
-  )
-}
 
 export function Sandbox() {
-
-  const [newTask, setNewTask] = useState({});
-  const [allTasks, setAllTasks] = useState([]);
+  const [arr, setArr] = useState([]);
+  const [val, setVal] = useState('');
   
-  const handleChange = ({ target }) => {
-    const { name, value } = target;
-    setNewTask((prev) => ({...prev, id:Date.now(), [name]:value}))
-  }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!newTask.title) return;
-    setAllTasks((prev) => ([newTask, ...prev]))
-      setNewTask({});
-    
-  }
-
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setArr((prev) => {
+      return [...prev, val]
+    })
+    setVal('');
+}
   return (
-    <main>
-      <h1>My Tasks</h1>
-      {/* New Task */}
-      <NewTask 
-        newTask={newTask}
-        handleChange={handleChange}
-        handleSubmit = {handleSubmit}
-      />
-    </main>
-  );    
+    <>
+      <form onSubmit={handleSubmit}>
+        <h4>Sandbox</h4>
+        <input
+          type="text"
+          value={val}
+          onChange={(e) => setVal(() => e.target.value)}
+        />
+      </form>
+      <ul>
+        {arr.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </>
+  );
 
   }
 

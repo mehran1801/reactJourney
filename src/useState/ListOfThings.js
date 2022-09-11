@@ -20,6 +20,7 @@ const addItem = (event) => {
 return (
   <>
     <form onSubmit={addItem}>
+      <h4>Shopping List </h4>
       <label>
         <input
           name="item"
@@ -28,6 +29,7 @@ return (
           onChange={(e) => setItemName(e.target.value)}
         />
       </label>
+      {/* <button type="submit">Add</button> */}
     </form>
     <ul>
       {items.map((item) => (

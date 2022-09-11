@@ -9,6 +9,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "markdown": "^0.5.0",
+    "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.3",
@@ -42,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "raw-loader": "^4.0.2"
+    "raw-loader": "^4.0.2",
+    "style-loader": "^3.3.1"
   }
 }
