@@ -1,6 +1,13 @@
 
 import React, { useState } from "react";
 
+
+const sandboxStyles = {
+  border: "1px dashed red",
+  padding: "20px",
+  backgroundColor: "#B8B8B8",
+};
+
 const text= `Focused, hard work is the real key
         to success. Keep your eyes on the goal, 
         and just keep taking the next step 
@@ -92,39 +99,71 @@ const questions = [
   },
 ];
 
+function ItemList({items,onItemClick}) {
+  //  {
+  //    produce.map((item) => (
+  //      <button value={item} onClick={addItem}>
+  //        {item}
+  //      </button>
+  //    ));
+  //  }
+  const handleClick = ({ target }) => {
+    const item = target.value;
 
-
-
-export function Sandbox() {
-  const [arr, setArr] = useState([]);
-  const [val, setVal] = useState('');
-  
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setArr((prev) => {
-      return [...prev, val]
-    })
-    setVal('');
+    onItemClick(item);
 }
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <h4>Sandbox</h4>
-        <input
-          type="text"
-          value={val}
-          onChange={(e) => setVal(() => e.target.value)}
-        />
-      </form>
-      <ul>
-        {arr.map((item, i) => (
-          <li key={i}>{item}</li>
-        ))}
-      </ul>
-    </>
-  );
+    <div>
+      {items.map(item => (
+        <button
+          value={item}
+          onClick={handleClick}
+        >{item}</button>
+      ))}
+    </div>
+  )
 
+}
+
+export function Sandbox() {
+  const [toggle, setToggle] = useState([]);
+
+  const addItem = (item) => {
+    setToggle(prev => {
+      return [...prev, item]
+    })
   }
 
+  const removeItem = (targetN) => {
+    setToggle(prev => {
+      return prev.filter((t,n)=>n!==targetN)
+    })
+  }
+  
+  return (
+    <div style={sandboxStyles}>
+      <h5>Sandbox</h5>
 
+    {/* code here */}
+
+    <ItemList items={produce} />
+      
+      <ul>
+        {toggle.map((item,n) => (
+          <li
+            onClick={()=>removeItem(n)}
+            key={n}
+
+            
+          >
+            {item}
+
+          </li>
+        ))}
+     </ul>
+
+      {/* End code here */}
+    </div>
+  )
+  
+}

@@ -4,6 +4,8 @@ import './index.scss'
 // import './my-sass.scss';
 import {Props, PropsExample} from "./props/PropsExample"
 import { Pizza } from "./useState/Pizza";
+import { QuestionIndex } from "./useState/QuestionIndex";
+import { Toggle } from "./useState/Toggle";
 import { GroceryCart } from "./useState/GroceryCart";
 import { Sandbox } from "./useState/Sandbox";
 import { ToggleWord } from "./useState/ToggleWord";
@@ -30,18 +32,26 @@ import { Timer } from "./useEffect/Timer";
 
 export function App() {
 
-  const divStyle = { backgroundColor: "lightblue" };
+  const divStyle = {
+    backgroundColor: "lightblue", padding: '20px',
+    backgroundClip: 'content-box',
+    // boxShadow: 'inset 0 0 0 10px lightGreen'
+  };
+
+  const container = {
+
+
+  }
   
 
   return (
     // <StyledContainer>
-    <div>
-      {/* <Sandbox />
-        <TodoList_MyVersion /> */}
-      <Sandbox />
-      <TodoList2 />
     
-    </div>
+      <div style={divStyle}>
+        <Sandbox />
+        <GroceryCart />
+      </div>
+    
   );
 }
 

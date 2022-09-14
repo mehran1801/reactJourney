@@ -1,43 +1,44 @@
 import React, { useState } from "react";
 
-const colors = [
-  "Aquamarine",
-  "BlueViolet",
-  "Chartreuse",
-  "CornflowerBlue",
-  "Thistle",
-  "SpringGreen",
-  "SaddleBrown",
-  "PapayaWhip",
-  "MistyRose",
-];
 
-export function ColorPicker() {
-    const [color, setColor] = useState("white");
+
+export function Toggle() {
+  const [isLoading, setIsLoading] = useState();
+   const [toggle, setToggle] = useState();
 
   // It is called Styled object variable
-  
-    const divStyle = {backgroundColor: color, padding:"10px"}
     return (
-      <div style={divStyle}>
-        <h3
-          style={{ display: "flex", justifyContent: "center", padding: "15px" }}
+      <div>
+        <h3>Toggle Loading Text</h3>
+
+        <p>Data is {isLoading ? "Loading" : "not Loading"}</p>
+        <button 
+          onClick={() => setIsLoading(true)}
+          disabled={isLoading}
         >
-          Color Picker
-        </h3>
-        {colors.map((color, i) => (
-          <button
-            value={color}
-            onClick={() => setColor(color)}
-            key={i}
-            style={{ padding: "10px", margin: "3px", backgroundColor: color }}
-          >
-            {color}
-          </button>
-        ))}
+          Turn ON
+        </button>
+
+        <button onClick={() => setIsLoading(false)}
+        disabled={!isLoading}
+        >Turn OFF</button>
+
+        {/* Toggle */}
         <hr />
-        
-       
+        <div>
+          <p>The toggle is {toggle}</p>
+          <button
+            onClick={() => setToggle("On")}
+          >
+            On</button>
+          
+          <button
+            onClick={() => setToggle("Off")}>
+            Off
+          </button>
+          
+        </div>
+        <hr />
         <div>
           <h5>Notes:</h5>
           <p className="overline">
@@ -49,13 +50,17 @@ export function ColorPicker() {
             function that we can use to update the value of this state <br />
             - Calling the state setter signals to React that the component needs
             to re-render, so the whole function defining the component is called
-            again. <br />* The magic of useState() is that it allows React to keep track
-            of the current value of state from one render to the next!
+            again. <br />* The magic of useState() is that it allows React to
+            keep track of the current value of state from one render to the
+            next!
           </p>
           <h6>Instructions:</h6>
           <ul className="list-disc">
             <li>Using Style object Variable</li>
-            <li>dont put curly braces when using state variable e.g color , gives no result</li>
+            <li>
+              dont put curly braces when using state variable e.g color , gives
+              no result
+            </li>
             <li>Using Ternary Operator</li>
             <li>
               More on{" "}

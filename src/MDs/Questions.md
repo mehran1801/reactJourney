@@ -8,3 +8,7 @@ When you store multiple 'input' values in an object, and you will define that ob
 
 # Question 3:
 Tagged Template Literals??
+
+# Question 4:
+
+Why do you have to put parenthesis around function name when using inline function.

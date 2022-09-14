@@ -17,6 +17,8 @@ how to find clickedButton?
 
 - I used prev and set its value inside setState, it worked instead of setting it directly like this setState("not loading..")
 
+- challenge yourself and disable one of the button.
+
 # Counter (a.k.a Steps Tracker)
 - I didn't give initial state value like 0, and got NaN. which makes sense as you cannot add +1 to undefined.
 
@@ -40,6 +42,27 @@ What is moving part that you will setState? ** If you look carefully it is index
 - In Console: Warning: You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
 
 - I have added onSubmit to form to see the updated value. something wrong in code ..fix it and see output.
+
+# Pizza (toggle Add/Remove)
+
+- so you toggling Add or Remove based on if sauce is included or not in dynamic array (state). 
+- It will be changed on user's interaction, like data will be added and data will be removed.
+(
+- if it is included then remove / filter it
+- if it is *NOT* included, then add it. 
+- All of this logic will be entered in handleClcik function.
+)
+
+# GroceryCart 
+- must capture index in event listener.
+- use arrow function 
+- only then you can use filter array based on that index as there are multiple items.
+
+* # An inline function is a function which is defined inside of the onClick handler when the React Component renders.
+
+It’s created on render because the function definition is inside of the onClick handler, which is inside of the component render method (or return, in the case of functional React components).
+
+You’d use an inline function to pass in additional arguments to a function, such as a value from a loop, or the target button’s value.
 
 # LoginForm
 
@@ -67,12 +90,7 @@ to set empty values in inputs you can use your initial object.firstName || '' AN
 
 - when storing values in object, name prop to inputs is very important, the setState function can use it to update the appropriate state. This way you can avoid having to write a handler function for each field.
 
-# Pizza (toggle Add/Remove)
 
-- so you toggling Add or Remove based on if sauce is included or not in dynamic array (state). 
-- It will be changed on user's interaction, like data will be added and data will be removed.
-- if it is included then remove / filter it
-- if it is *NOT* included, then add it. 
 
 # ListOfThings
 
@@ -83,10 +101,7 @@ to set empty values in inputs you can use your initial object.firstName || '' AN
 - 
 
 
-# GroceryCart 
-- must capture index in event listener.
-- use arrow function 
-- only then you can use filter array based on that index as there are multiple items.
+
 
 # LessText
 
