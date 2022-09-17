@@ -27,6 +27,7 @@ export function Pizza() {
           {option}
         </button>
       ))}
+      
       <p>Order a {selected.join(", ")} pizza</p>
       <hr></hr>
     </div>

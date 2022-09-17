@@ -39,7 +39,7 @@ const pantryItems = [
   "Quinoa",
 ];
 
-// *** handleClick is a function, that accepts 1 argument called value.
+// ~ handleClick is a function, that accepts 1 argument called value.
 
 // ?? And when you invoke it once, it will return another function which can be used for the onClick React listener.
 
